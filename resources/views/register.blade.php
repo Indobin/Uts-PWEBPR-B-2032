@@ -1,3 +1,3 @@
 <x-app>
-    Login
+ Register
 </x-app>

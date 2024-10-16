@@ -1,4 +1,7 @@
-<x-App>
+<x-app>
+    <x-slot name="heading">
+        Home Page
+    </x-slot>
     <h1>coba h1</h1>
     <p>coba p?</p>
     <div>
@@ -26,4 +29,4 @@
       </tbody>
      </table>
     </div>
-</x-App>
+</x-app>
