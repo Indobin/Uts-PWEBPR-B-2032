@@ -3,12 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use Faker\Factory as faker;
 Route::get('/', function () {
-    return view('App');
-});
-Route::get('/App', function (){
-    return view('App');
-});
-Route::get('/home', function(){
     $contacts = [];
     $faker = faker::create();
     for ($i=1; $i <=10 ; $i++) { 
@@ -18,5 +12,23 @@ Route::get('/home', function(){
             'phone' => $faker->phoneNumber,
         ];
     }
-    return view('Homepage', ['contacts' => $contacts]);
+    return view('contacts', ['contacts' => $contacts]);
+})->name('contacts');
+Route::get('/contacts', function (){
+    $contacts = [];
+    $faker = faker::create();
+    for ($i=1; $i <=10 ; $i++) { 
+        $contacts[]= [
+            'name' => $faker->name,
+            'email' => $faker->unique()->email,
+            'phone' => $faker->phoneNumber,
+        ];
+    }
+    return view('contacts', ['contacts' => $contacts]);
 });
+Route::get('/login', function(){
+   return view('login');
+})->name('login');
+Route::get('/register', function(){
+    return view('register');
+ })->name('register');

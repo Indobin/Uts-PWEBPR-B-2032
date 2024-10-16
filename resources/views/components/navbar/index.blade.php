@@ -7,10 +7,9 @@
              </div>
              <div class="hidden md:block">
                  <div class="ml-10 flex items-baseline space-x-4">
-                     <x-navbar.link href="/home">Home</x-navbar.link>
-                     <x-navbar.link href="/about">About</x-navbar.link>
-                     <x-navbar.link href="/contact">Contact</x-navbar.link>
-                     <x-navbar.link href="">Login</x-navbar.link>
+                     <x-navbar.link href="{{route('contacts')}}">Contact</x-navbar.link>
+                     <x-navbar.link href="{{route('login')}}">Login</x-navbar.link>
+                     <x-navbar.link href="{{route('register')}}">Register</x-navbar.link>
                  </div>
              </div>
          </div>
@@ -33,10 +32,9 @@
  <!-- Mobile menu -->
  <div class="md:hidden" x-show="open" @click.outside="open = false" x-transition>
      <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
-         <x-navbar.dropdown-item href="/home">Home</x-navbar.dropdown-item>
-         <x-navbar.dropdown-item href="/about">About</x-navbar.dropdown-item>
-         <x-navbar.dropdown-item href="/contact">Contact</x-navbar.dropdown-item>
-         <x-navbar.dropdown-item href="">Login</x-navbar.dropdown-item>
+         <x-navbar.dropdown-item href="{{route('contacts')}}">Contact</x-navbar.dropdown-item>
+         <x-navbar.dropdown-item href="{{route('login')}}">Login</x-navbar.dropdown-item>
+         <x-navbar.dropdown-item href="{{route('register')}}">Register</x-navbar.dropdown-item>
      </div>
  </div>
 </nav>
