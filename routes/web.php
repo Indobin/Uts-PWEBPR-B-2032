@@ -5,27 +5,17 @@ use Faker\Factory as faker;
 Route::get('/', function () {
     $contacts = [];
     $faker = faker::create();
-    for ($i=1; $i <=10 ; $i++) { 
+    for ($i=1; $i <=20 ; $i++) { 
         $contacts[]= [
             'name' => $faker->name,
             'email' => $faker->unique()->email,
             'phone' => $faker->phoneNumber,
         ];
     }
+    
     return view('contacts', ['contacts' => $contacts]);
 })->name('contacts');
-Route::get('/contacts', function (){
-    $contacts = [];
-    $faker = faker::create();
-    for ($i=1; $i <=10 ; $i++) { 
-        $contacts[]= [
-            'name' => $faker->name,
-            'email' => $faker->unique()->email,
-            'phone' => $faker->phoneNumber,
-        ];
-    }
-    return view('contacts', ['contacts' => $contacts]);
-});
+
 Route::get('/login', function(){
    return view('login');
 })->name('login');
