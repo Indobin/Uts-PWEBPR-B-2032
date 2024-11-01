@@ -11,13 +11,13 @@
 <body>
   <body class="font-sans antialiased">
         
-    <div class="min-h-screen bg-gray-100">
+    <div class="min-h-screen bg-gray-100 flex flex-col">
         @include('components.navbar.index')
 
 
         <!-- Page Content -->
         <main>
-            <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+            <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 flex-grow">
                 @yield('content')
             </div>
         </main> 

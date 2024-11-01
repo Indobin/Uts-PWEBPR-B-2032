@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\UserController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Faker\Factory as faker;
 
@@ -10,22 +13,12 @@ Route::get('/', function () {
 Route::get('/Home', function () {
     return view('home');
 })->name('Home');
-
-Route::get('/Contact/Mahasiswa', function(){
-    $contacts = [];
-    $faker = faker::create();
-    for ($i=1; $i <=20 ; $i++) { 
-        $nim = '23241010' . $faker->numberBetween(1000, 9999);
-        $contacts[]= [
-            'name' => $faker->name,
-            'email' => $faker->unique()->email,
-            'phone' => $faker->phoneNumber,
-            'nim' => $nim
-        ];
-    }
-    return view('contacts.mahasiswa', ['contacts' => $contacts]);
- })->name('Contact/Mahasiswa');
-
+Route::resource('/satya', UserController::class);
+Route::get('/Contact/Mahasiswa', [UserController::class, "index"])->name('Contact/Mahasiswa');
+Route::get('/create-mahasiswa', [UserController::class, "create"])->name('Form/Mahasiswa');
+Route::post('/create-mahasiswa', [UserController::class, "store"])->name('Create/Mahasiswa');
+Route::get('/edit-mahasiswa/{user}', [UserController::class, "edit"])->name('Edit/Mahasiswa');
+Route::put('/update-mahasiswa/{user}', [UserController::class, "update"])->name('Update/Mahasiswa');
 Route::get('/Contact/Dosen', function(){
     $contacts = [];
     $faker = faker::create();
