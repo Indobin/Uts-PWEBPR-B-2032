@@ -35,8 +35,8 @@ Route::get('/Contact/Dosen', function(){
     return view('contacts.dosen', ['contacts' => $contacts]);
  })->name('Contact/Dosen');
 
- Route::get('/register', [AuthController::class, 'register'])->name('register');
- Route::get('/login', [AuthController::class, 'login'])->name('login');
+Route::get('/register', [AuthController::class, 'register'])->name('register');
+Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/register', [AuthController::class,'store']);
 Route::post('/login', [AuthController::class, 'authenticate'])->name('login');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
