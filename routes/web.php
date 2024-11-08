@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\UserController;
 use App\Models\User;
@@ -8,11 +9,11 @@ use Faker\Factory as faker;
 
 Route::get('/', function () {
     return view('home');
-})->name('Home');
+})->name('Home')->middleware('auth');
 
 Route::get('/Home', function () {
     return view('home');
-})->name('Home');
+})->name('Home')->middleware('auth');
 Route::resource('/satya', UserController::class);
 Route::get('/Contact/Mahasiswa', [UserController::class, "index"])->name('Contact/Mahasiswa');
 Route::get('/create-mahasiswa', [UserController::class, "create"])->name('Form/Mahasiswa');
@@ -34,10 +35,8 @@ Route::get('/Contact/Dosen', function(){
     return view('contacts.dosen', ['contacts' => $contacts]);
  })->name('Contact/Dosen');
 
-Route::get('/login', function(){
-   return view('login');
-})->name('login');
-
-Route::get('/register', function(){
-    return view('register');
- })->name('register');
+ Route::get('/register', [AuthController::class, 'register'])->name('register');
+ Route::get('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/register', [AuthController::class,'store']);
+Route::post('/login', [AuthController::class, 'authenticate'])->name('login');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');

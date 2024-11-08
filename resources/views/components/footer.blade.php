@@ -12,7 +12,7 @@
                     <a href="{{ route('Contact/Dosen') }}" class="hover:underline me-4 md:me-6">Dosen</a>
                 </li>
                 <li>
-                    <a href="{{ route('login') }}" class="hover:underline me-4 md:me-6">Login</a>
+                    <a href="" class="hover:underline me-4 md:me-6">Login</a>
                 </li>
                 <li>
                     <a href="{{ route('register') }}" class="hover:underline">Daftar</a>

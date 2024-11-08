@@ -10,33 +10,42 @@
             </h2>
         </div>
 
-        <form action="{{route('login')}}" method="" class="space-y-6">
+        <form action="{{route('register')}}" method="POST" class="space-y-6">
             @csrf
             <div>
                 <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
                 <div class="mt-1">
-                    <input id="name" name="name" type="text" required class="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <input id="name" name="name" type="text"  class="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                 </div>
+                @error('name')
+                    <p class="text-red-500">{{$message}}</p>
+                @enderror
             </div>
-
             <div>
-                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                <div class="mt-1">
-                    <input id="email" name="email" type="email" required class="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                </div>
-            </div>
+             <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+             <div class="mt-1">
+                 <input id="username" name="username" type="text"  class="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+             </div>
+             @error('username')
+                    <p class="text-red-500">{{$message}}</p>
+                @enderror
+         </div>
+          
 
             <div>
                 <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
                 <div class="mt-1">
-                    <input id="password" name="password" type="password" required class="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <input id="password" name="password" type="password"  class="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                 </div>
+                @error('password')
+                    <p class="text-red-500">{{$message}}</p>
+                @enderror
             </div>
 
             <div>
                 <label for="password_confirmation" class="block text-sm font-medium text-gray-700">Confirm Password</label>
                 <div class="mt-1">
-                    <input id="password_confirmation" name="password_confirmation" type="password" required class="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <input id="password_confirmation" name="password_confirmation" type="password"  class="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                 </div>
             </div>
 
@@ -49,7 +58,7 @@
 
         <p class="mt-6 text-center text-sm text-gray-600">
             Sudah punya akun? 
-            <a href="/login" class="font-medium text-gray-800 hover:text-gray-900">
+            <a href="" class="font-medium text-gray-800 hover:text-gray-900">
                 Sign in
             </a>
         </p>

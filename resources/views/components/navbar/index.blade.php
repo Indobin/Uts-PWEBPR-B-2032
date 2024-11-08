@@ -26,7 +26,7 @@
               </div>
             </div>
   
-            <a href="{{route('login')}}" class="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium {{ request()->is('login') ? 'bg-gray-900 text-white' : '' }}">Login</a>
+            <a href="{{route('login')}}" class="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium  'bg-gray-900 text-white' : '' }}">Login</a>
             <a href="{{route('register')}}" class="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium {{ request()->is('register') ? 'bg-gray-900 text-white' : '' }}">Register</a>
           </div>
         </div>
@@ -59,7 +59,7 @@
             </li>
           </ul>
         </div>
-        <a href="{{route('login')}}" class="block text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 {{ request()->is('login') ? 'bg-gray-900 text-white' : '' }}">Login</a>
+        <a href="" class="block text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 'bg-gray-900 text-white' : '' }}">Login</a>
         <a href="{{route('register')}}" class="block text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 {{ request()->is('register') ? 'bg-gray-900 text-white' : '' }}">Register</a>
       </div>
     </div>
